@@ -1,8 +1,10 @@
 import streamlit as st
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-
-client = genai.configure(api_key="AIzaSyBcIjLu4uxIjmt63JznqXr9QpbwAMd5kJg")
+client = genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 #title
 st.title("RPG Character Generator")
 
